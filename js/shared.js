@@ -51,43 +51,43 @@ class Run {
     set endTime(value) {
         this._endTime = value;
     }
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	//calculates the total distance travelled
 	get distanceTravelled () {
-=======
+//=======
 	
 	// Method which calculates the total distance travelled
     get distanceTravelled () {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 		return google.maps.geometry.spherical.computeLength(this._arrayLocations);
 	}
 	
 	get travelDuration() {
 		return (this._endTime - this._startTime) / 1000;
 	}
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	//re-intialises objects which was stored from the local storage
     //stores them as 
     //retrieve past runs
 	initialiseFromRunPDO(aRun) {//aRun is the parameter name
-=======
+//=======
 	
     // re-initialised objects which were stored in the local stoage.
 	initialiseFromRunPDO(aRun) {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         this._startLocation = new google.maps.LatLng(aRun._startLocation);        
 		this._destinationLocation = new google.maps.LatLng(aRun._destinationLocation);
 		
 		var locationsCount = aRun._arrayLocations.length;
 		var locations = [];
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 		//pushes all locations into an array called locations
 		for(var i = 0; i < locationsCount; i++) {
-=======
+//=======
 		
 		// pushes all locations into an array called locations
         for(var i = 0; i < locationsCount; i++) {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 			locations.push(new google.maps.LatLng(aRun._arrayLocations[i]));
 		}
 		

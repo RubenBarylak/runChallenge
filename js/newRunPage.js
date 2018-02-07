@@ -19,7 +19,7 @@ var oldRun = null;
 
 //obtaining previous runs,if any
 if (typeof (Storage) !== "undefined") {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	var runIndex = localStorage.getItem(APP_PREFIX + "-reRun"); //index used to access a run from the stringified JSON array of runs
 	savedRuns = JSON.parse(localStorage.getItem(APP_PREFIX + '-runs'));//array of completed runs that are loaded onto the past run screen
 	
@@ -28,7 +28,7 @@ if (typeof (Storage) !== "undefined") {
 		
 		if (savedRuns !== null) {
 			oldRun = savedRuns[runIndex]; //old run is stored in the savedRUNS array
-=======
+//=======
 	// runIndex is the index used to access a run from the stringified JSON array of runs
     var runIndex = localStorage.getItem(APP_PREFIX + "-reRun");
 	// savedRuns is array of completed runs that are loaded onto the Past Runs screen
@@ -41,7 +41,7 @@ if (typeof (Storage) !== "undefined") {
 		// oldRun is stored as an element in the savedRuns array
         if (savedRuns !== null) {
 			oldRun = savedRuns[runIndex];
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 		}
 	}
 
@@ -49,12 +49,12 @@ if (typeof (Storage) !== "undefined") {
 	console.log("Error: localStorage is not supported by current browser.");
 }
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 r(function(){ //checking if the function geolocate is ready or not
-=======
+//=======
 // r is a function with no arguments
 r(function(){
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     geolocate();
 });
 // Checks if the function r() is ready or not - ie: whether it has been loaded or not
@@ -75,12 +75,12 @@ function randomDestination(position) {
 	
     //using the do-while loop so that the distance of the destination is always greater than 60m and less than 150m
 	do {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 		rand = positiveNegativeArray[Math.floor(Math.random() * positiveNegativeArray.length)];//this line should've been omitted
-=======
+//=======
 		// The following line should've been omitted
         rand = positiveNegativeArray[Math.floor(Math.random() * positiveNegativeArray.length)];
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         
         
         //formula to calculate the distnace of random destination
@@ -88,23 +88,23 @@ function randomDestination(position) {
 			lat: ((Math.random() * (max - min)) + min) + position.lat,
 			lng: ((Math.random() * (max - min)) + min) + position.lng
 		}
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 		//method of googlemapsAPI to calculate the linear distance between 2 given points
 		distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(currentPosition), new google.maps.LatLng(randomPosition));
-=======
+//=======
 		
 		// A method of the Google Maps API that calculates a linear distance between two given points
         distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(currentPosition), new google.maps.LatLng(randomPosition));
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     }
     while(distance > 150 || distance < 60);
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	document.getElementById("beginRun").disabled = false;//beginrun on html is disbled at first
-=======
+//=======
 	// The beginRun button located inside the HTML document is disabled at first
     document.getElementById("beginRun").disabled = false;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     
 	console.log(randomPosition);
 
@@ -114,7 +114,7 @@ function randomDestination(position) {
 
 //creating a function to start a run
 function startRun() {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
     document.getElementById("selectDestination").disabled = true; //disables select Dest function
     document.getElementById("beginRun").disabled = true; //disables beginRun function
 
@@ -124,7 +124,7 @@ function startRun() {
     //track runtimer = 
     //variable is declared for a set time interval every 1000millisecond=1sec
     //reason for a variable on this timing event, is to stop the timing aswell
-=======
+//=======
     // following two lines disable the selectDestination and beginRun elements in the DOM
     document.getElementById("selectDestination").disabled = true;
     document.getElementById("beginRun").disabled = true;
@@ -135,7 +135,7 @@ function startRun() {
     newRun = new Run(startPosition, new google.maps.LatLng(destinationPosition), new Array(startPosition) , new Date(), null);
 	// A variable is declared for the timing event setInterval which calls the trackRun function every 1000 miliseconds. The reason why a variable must be declared for this timing event is so that timer can be stopped later
     trackRunTimer = setInterval(trackRun, 1000);
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 }
 
 //Creating a function to track a run
@@ -181,12 +181,12 @@ function trackRun() {
 //Creating a function which draws a line on the map
 
 function drawPolyLine() {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
     var pathPolyLine = new google.maps.Polyline({//from googleAPI
-=======
+//=======
     // an object from the Google Maps API
     var pathPolyLine = new google.maps.Polyline({
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         path: newRun.arrayLocations,
         geodesic: true,
         strokeColor: '#FF0000',
@@ -201,13 +201,13 @@ function drawPolyLine() {
 
 //creating a function to stop a run
 function stopRun() {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	newRun.endTime = new Date();
 	navigator.geolocation.clearWatch(geolocationWatchID); //geolocationWatchID =variable finds the current position,
     clearInterval(trackRunTimer);//clear
     clearInterval(trackDestinationTimer);//clear
 	displayMessage('Run completed ' + newRun.distanceTravelled + 'm in ' + newRun.travelDuration + 'sec.')//display pop up
-=======
+//=======
     newRun.endTime = new Date();
 	
     // For each time geolocation is used in the map, geolocationWatchID has a number assigned to it. The following line resets geolcation so that it can be used next time.
@@ -218,7 +218,7 @@ function stopRun() {
     clearInterval(trackDestinationTimer);
     
 	displayMessage('Run completed ' + newRun.distanceTravelled + 'm in ' + newRun.travelDuration + 'sec.')
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 	console.log(newRun.distanceTravelled)
 	console.log(newRun.travelDuration)
 	console.log("Run stopped.");
@@ -226,13 +226,13 @@ function stopRun() {
 
 
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 // Map Initialization callback.  Will be called when Maps API loads.
 function initMap() {//initialises the map
-=======
+//=======
 // Map Initialization callback function.  Will be called when Maps API loads. Gets called when the website loads
 function initMap() {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     // Enabling new cartography and themes
     google.maps.visualRefresh = true;
 
@@ -289,12 +289,12 @@ function initMap() {
     // this line checks to see whether the device has GPS functionality.
 }
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 function geolocate() {//function that finds the user position
-=======
+//=======
 // function that finds the position of the user
 function geolocate() {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     if ("geolocation"in navigator) {
         // Here, properties are assigned to a new object. These properties are specifiable options which are passed into the geolocationWatchID variable
         var positionOptions = {
@@ -339,15 +339,15 @@ function showCurrentPosition(position) {
 
 //Checking if the accuracy is high to make the select Destination button enabled	
 	if (currentPosition.accuracy < ACCURACY_THRESHOLD) {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 		if (runOnce) {
 			if(oldRun === null) {//if no run is being viewed, then the app allows the user to choose destination
-=======
+//=======
 		// runOnce is set as true as long as the accuracy is within the threshold. The following code will run
         if (runOnce) {
 			// if there is no run being viewed, then the app allows the user to select a destination
             if(oldRun === null) {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 				document.getElementById("selectDestination").disabled = false;
 			} else {
 				showDestinationPosition({lat: oldRun._destinationLocation.lat, lng: oldRun._destinationLocation.lng});			
@@ -362,12 +362,12 @@ function showCurrentPosition(position) {
 			// displays a distance to the start of the oldRun with Google Maps API method
             distanceFromStart = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(currentPosition), new google.maps.LatLng({lat: oldRun._startLocation.lat, lng: oldRun._startLocation.lng}));
 			
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 			if (true) {//enables the old run to be reattempted
-=======
+//=======
             // enables the oldRun to be reattemped
 			if (true) {
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 				document.getElementById("beginRun").disabled = false;
 				displayMessage('You may begin run.', 1000);	
 				oldRun = null;
@@ -396,11 +396,11 @@ function showDestinationPosition(position) {
     });
 }
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 //for the purpose of displaying the DOM the distance to destination
 =======
 //for the purpose of displaying on the DOM the distanceToDestination
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 function trackDestination() {
 	distanceToDestination = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(currentPosition), new google.maps.LatLng(destinationPosition));
     document.getElementById("distanceToDestination").innerHTML = distanceToDestination.toFixed(2);	

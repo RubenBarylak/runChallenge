@@ -181,9 +181,6 @@ function trackRun() {
 //Creating a function which draws a line on the map
 
 function drawPolyLine() {
-//<<<<<<< Updated upstream
-    var pathPolyLine = new google.maps.Polyline({//from googleAPI
-//=======
     // an object from the Google Maps API
     var pathPolyLine = new google.maps.Polyline({
 //>>>>>>> Stashed changes
@@ -201,13 +198,7 @@ function drawPolyLine() {
 
 //creating a function to stop a run
 function stopRun() {
-//<<<<<<< Updated upstream
-	newRun.endTime = new Date();
-	navigator.geolocation.clearWatch(geolocationWatchID); //geolocationWatchID =variable finds the current position,
-    clearInterval(trackRunTimer);//clear
-    clearInterval(trackDestinationTimer);//clear
-	displayMessage('Run completed ' + newRun.distanceTravelled + 'm in ' + newRun.travelDuration + 'sec.')//display pop up
-//=======
+
     newRun.endTime = new Date();
 	
     // For each time geolocation is used in the map, geolocationWatchID has a number assigned to it. The following line resets geolcation so that it can be used next time.
@@ -228,9 +219,7 @@ function stopRun() {
 
 //<<<<<<< Updated upstream
 // Map Initialization callback.  Will be called when Maps API loads.
-function initMap() {//initialises the map
-//=======
-// Map Initialization callback function.  Will be called when Maps API loads. Gets called when the website loads
+
 function initMap() {
 //>>>>>>> Stashed changes
     // Enabling new cartography and themes
@@ -289,9 +278,7 @@ function initMap() {
     // this line checks to see whether the device has GPS functionality.
 }
 
-//<<<<<<< Updated upstream
-function geolocate() {//function that finds the user position
-//=======
+
 // function that finds the position of the user
 function geolocate() {
 //>>>>>>> Stashed changes
@@ -339,10 +326,7 @@ function showCurrentPosition(position) {
 
 //Checking if the accuracy is high to make the select Destination button enabled	
 	if (currentPosition.accuracy < ACCURACY_THRESHOLD) {
-//<<<<<<< Updated upstream
-		if (runOnce) {
-			if(oldRun === null) {//if no run is being viewed, then the app allows the user to choose destination
-//=======
+
 		// runOnce is set as true as long as the accuracy is within the threshold. The following code will run
         if (runOnce) {
 			// if there is no run being viewed, then the app allows the user to select a destination
@@ -362,9 +346,7 @@ function showCurrentPosition(position) {
 			// displays a distance to the start of the oldRun with Google Maps API method
             distanceFromStart = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(currentPosition), new google.maps.LatLng({lat: oldRun._startLocation.lat, lng: oldRun._startLocation.lng}));
 			
-//<<<<<<< Updated upstream
-			if (true) {//enables the old run to be reattempted
-//=======
+
             // enables the oldRun to be reattemped
 			if (true) {
 //>>>>>>> Stashed changes
@@ -396,9 +378,7 @@ function showDestinationPosition(position) {
     });
 }
 
-//<<<<<<< Updated upstream
-//for the purpose of displaying the DOM the distance to destination
-=======
+
 //for the purpose of displaying on the DOM the distanceToDestination
 //>>>>>>> Stashed changes
 function trackDestination() {

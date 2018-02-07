@@ -1,4 +1,4 @@
-// Shared utility code needed by the code of all three pages.
+// Shared utility code needed by the code of all three pages. 
 
 // This function displays the given message String as a "toast" message at
 // the bottom of the screen.  It will be displayed for 2 second, or if the

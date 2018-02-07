@@ -53,7 +53,6 @@ class Run {
     }
 //<<<<<<< Updated upstream
 	//calculates the total distance travelled
-	get distanceTravelled () {
 //=======
 	
 	// Method which calculates the total distance travelled
@@ -69,7 +68,6 @@ class Run {
 	//re-intialises objects which was stored from the local storage
     //stores them as 
     //retrieve past runs
-	initialiseFromRunPDO(aRun) {//aRun is the parameter name
 //=======
 	
     // re-initialised objects which were stored in the local stoage.

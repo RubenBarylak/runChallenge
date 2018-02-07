@@ -22,7 +22,7 @@ function loadRuns() {
 	}
 }
 
-// Creating a function so that the user can view the runs
+// Creating a function so that the user can view the runs 
 function viewRun(runIndex) {
     // Saving the desired run to local storage so it can be accessed from View Run page.
     localStorage.setItem(APP_PREFIX + "-selectedRun", runIndex);
